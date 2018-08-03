@@ -1,4 +1,67 @@
 body {
-    color: #fff;
-    background: #000;
+    color: #000;
+    font-family: "Montserrat", Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	min-height: 100vh;
+	background: url('../images/main-bg.jpg') no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.wrapper:before {
+	position: absolute;
+	content: '';
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(255,255,255, 0.75);
+}
+
+.pic {
+	margin-bottom: 25px;
+	position: relative;
+	z-index: 5;
+}
+.pic img {
+	width: 125px;
+	height: 125px;
+	border-radius: 50%;
+	box-shadow: 0 0px 4px 0 rgba(0,0,0,0.18), 0 0px 12px 0 rgba(0,0,0,0.15);
+    opacity: .9;
+}
+.body-wrap {
+	position: relative;
+	z-index: 5;
+}
+.body-wrap .name {
+	font-size: 40px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.body-wrap .descr {
+	font-size: 19px;
+	font-weight: 500;
+	color: #aaa;
+	margin-bottom: 30px;
+}
+
+.social-links a {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+}
+
+.social-links a svg {
+	width: 17px;
+	height: 17px;
 }
