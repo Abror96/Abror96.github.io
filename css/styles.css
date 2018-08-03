@@ -5,7 +5,7 @@ body {
     margin: 0;
 }
 
-.wrapper {
+.content {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -16,7 +16,7 @@ body {
 	background-size: cover;
 	position: relative;
 }
-.wrapper:before {
+.content:before {
 	position: absolute;
 	content: '';
 	top: 0;
@@ -64,4 +64,69 @@ body {
 .social-links a svg {
 	width: 17px;
 	height: 17px;
+}
+
+.customScroll {
+	height: 300vh;
+	position: relative;
+	overflow: hidden;
+}
+.customScroll.before > div {
+	position: absolute;
+} 
+.customScroll.active > div {
+	position: fixed;
+} 
+.customScroll.after > div {
+	position: absolute;
+} 
+.customScroll.after .pic3 {
+	bottom: 0;	
+	width: 100%;
+	top: auto;
+}
+.pic1 {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-size: cover;	
+	z-index: 3;
+	overflow: hidden;
+}
+.bg1 {
+	background-color: #069;
+}
+.bg2 {
+	background: #054;
+}
+.bg3 {
+	background-color: #043;
+}
+.bg[data-background="bg"] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	display: block;
+	will-change: transform;
+}
+.pic2 {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-size: cover; 
+	z-index: 2;
+	overflow: hidden;
+}
+.pic3 {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-size: cover; 
+	z-index: 1;
+	overflow: hidden;
 }
