@@ -22,11 +22,15 @@ $(function(){
 		blockPic2.height(blockHeight);
 		blockPic3.height(blockHeight);
 
-		if ($(this).width() < 1024) {isMobile = true}
+		if ($(this).width() < 1024) {isMobile = true;}
+		else {isMobile = false;}
+
+		if (!isMobile) {
+			customScroll();
+		}
 	}).trigger('resize');
 
-	if (!isMobile) {
-
+	function customScroll() {
 		$window.scroll(function(e){
 
 			var windowScrollTop = $window.scrollTop(),
@@ -136,6 +140,35 @@ $(function(){
 			        infinite: true
 		      	}
 		    },
+		    {
+				breakpoint: 851,
+				settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 1,
+			        infinite: true
+		      	}
+		    },
+		    {
+				breakpoint: 700,
+				settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1,
+			        centerMode: true,
+			        infinite: true,
+			        arrows: false
+		      	}
+		    },
+		    {
+				breakpoint: 500,
+				settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1,
+			        centerMode: false,
+			        infinite: true,
+			        arrows: false,
+			        dots: true
+		      	}
+		    }
 		]
 	});
 	
