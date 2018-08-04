@@ -47,7 +47,7 @@ $(function(){
 						$window.scrollTop(kosfigScrollTop);
 						abc = true;
 					}
-					console.log('block1');
+					
 					step = windowScrollTop - kosfigScrollTop - blockPic1.height();
 
 					parentBlock.removeClass('before after').addClass('active');
