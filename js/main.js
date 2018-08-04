@@ -171,5 +171,25 @@ $(function(){
 		    }
 		]
 	});
+
+	// --------------------------------------- /SLICK SLIDER --------------------------------------- //
+
+
+	// --------------------------------------- TABS --------------------------------------- //
+
+	$('.tabs-nav a').on('click', function (event) {
+		var $this = $(this);
+	    event.preventDefault();
+	    
+	    $('.tab-active').removeClass('tab-active');
+	    $this.parent().addClass('tab-active');
+	    $('.tabs-stage > div').hide();
+	    $($this.attr('href')).fadeIn();
+	    console.log($($this.attr('href')));
+	});
+
+	$('.tabs-nav a:first').trigger('click'); // Default
+
+	// --------------------------------------- /TABS --------------------------------------- //
 	
 });

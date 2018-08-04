@@ -131,6 +131,10 @@ body {
 .pic2 .items-wrapper .item img {
 	width: 100%;
 }
+.pic3 .content {
+	align-items: flex-start;
+	padding: 0 80px;
+}
 .content .pic {
 	margin-bottom: 25px;
 	position: relative;
@@ -255,6 +259,47 @@ body {
 .slick-dots li.slick-active button {
 	background: #fff;
 }
+/* TABS */
+.tabs-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    margin-bottom: 10px;
+}
+.tabs-nav li {
+	margin: 0 5px;
+} 
+.tabs-nav li:first-child {
+	margin-left: 0;
+}
+.tabs-nav li:last-child {
+	margin-right: 0;
+}
+.tabs-nav a { 
+    border: 1px dashed rgba(255,255,255,0.4);
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    font-weight: normal;  
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none; 
+    padding: 11px 25px;
+}
+.tabs-nav .tab-active a {
+    border-style: solid;
+}
+.tabs-nav .tab-active a span {
+	border-bottom: 1px dashed rgba(255,255,255,0.7);
+}
+.tabs-stage {
+    margin-bottom: 20px;
+    position: relative;
+    padding: 20px;
+} 
 
 @media all and (max-width: 1023px) {
 
