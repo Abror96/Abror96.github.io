@@ -10,7 +10,10 @@ $(function(){
 		blockPic1Img = parentBlock.find('>*').eq(0).find('[data-background=bg]'),
 		blockPic2Img = parentBlock.find('>*').eq(1).find('[data-background=bg]'),
 		abc = false,
-		step = 0;
+		step = 0,
+		isMobile = false;
+
+
 
 	$window.on('resize', function(){
 		var blockHeight = $window.height();
@@ -18,98 +21,102 @@ $(function(){
 		blockPic1.height(blockHeight);
 		blockPic2.height(blockHeight);
 		blockPic3.height(blockHeight);
+
+		if ($(this).width() < 1024) {isMobile = true}
 	}).trigger('resize');
 
-	$window.scroll(function(e){
+	if (!isMobile) {
 
-		var windowScrollTop = $window.scrollTop(),
-		kosfigScrollTop = parentBlock.offset().top;
+		$window.scroll(function(e){
 
-		currentScrollTop = windowScrollTop;
+			var windowScrollTop = $window.scrollTop(),
+			kosfigScrollTop = parentBlock.offset().top;
 
-		if (windowScrollTop >= (kosfigScrollTop + blockPic1.height()*2) ) {
-			parentBlock.removeClass('before active').addClass('after');
-			
-			abc = true;
+			currentScrollTop = windowScrollTop;
 
-			blockPic1.css({
-				'transform': 'translateY('+(-blockPic2.height())+'px)'
-			});
-			blockPic2.css({
-				'transform': 'translateY('+(-blockPic2.height())+'px)'
-			});
-			blockPic1Img.css({
-				'transform': 'translateY('+(blockPic2.height())+'px)'
-			});
-			blockPic2Img.css({
-				'transform': 'translateY('+(blockPic2.height())+'px)'
-			});
-		} else if (windowScrollTop >= (kosfigScrollTop+blockPic1.height())) {
-			if (!abc) {
-				$window.scrollTop(kosfigScrollTop);
+			if (windowScrollTop >= (kosfigScrollTop + blockPic1.height()*2) ) {
+				parentBlock.removeClass('before active').addClass('after');
+				
 				abc = true;
+
+				blockPic1.css({
+					'transform': 'translateY('+(-blockPic2.height())+'px)'
+				});
+				blockPic2.css({
+					'transform': 'translateY('+(-blockPic2.height())+'px)'
+				});
+				blockPic1Img.css({
+					'transform': 'translateY('+(blockPic2.height())+'px)'
+				});
+				blockPic2Img.css({
+					'transform': 'translateY('+(blockPic2.height())+'px)'
+				});
+			} else if (windowScrollTop >= (kosfigScrollTop+blockPic1.height())) {
+				if (!abc) {
+					$window.scrollTop(kosfigScrollTop);
+					abc = true;
+				}
+				
+				step = windowScrollTop - kosfigScrollTop - blockPic1.height();
+
+				parentBlock.removeClass('before after').addClass('active');
+
+				blockPic2.css({
+					'transform': 'translateY('+(-step)+'px)'
+				});
+				blockPic2Img.css({
+					'transform': 'translateY('+(step)+'px)'
+				});
+				blockPic1.css({
+					'transform': 'translateY('+(-blockPic2.height())+'px)'
+				});
+				blockPic1Img.css({
+					'transform': 'translateY('+(blockPic2.height())+'px)'
+				});
+
+			} else if (windowScrollTop >= (kosfigScrollTop)) {
+				if (!abc) {
+					$window.scrollTop(kosfigScrollTop);
+					abc = true;
+				}
+				parentBlock.removeClass('before after').addClass('active');
+
+				step = windowScrollTop - kosfigScrollTop;
+
+				blockPic1.css({
+					'transform': 'translateY('+(-step)+'px)'
+				});
+
+				blockPic1Img.css({
+					'transform': 'translateY('+(step)+'px)'
+				});
+				blockPic2.css({
+					'transform': 'translateY('+(0)+'px)'
+				});
+				blockPic2Img.css({
+					'transform': 'translateY('+(0)+'px)'
+				});
+
+			} else {
+				abc = false;
+				parentBlock.removeClass('active').addClass('before');
+				step = 0;
+				blockPic1.css({
+					'transform': 'translateY('+(0)+'px)'
+				});
+				blockPic2.css({
+					'transform': 'translateY('+(0)+'px)'
+				});
+				blockPic1Img.css({
+					'transform': 'translateY('+(0)+'px)'
+				});
+				blockPic2Img.css({
+					'transform': 'translateY('+(0)+'px)'
+				});
 			}
-			
-			step = windowScrollTop - kosfigScrollTop - blockPic1.height();
-
-			parentBlock.removeClass('before after').addClass('active');
-
-			blockPic2.css({
-				'transform': 'translateY('+(-step)+'px)'
-			});
-			blockPic2Img.css({
-				'transform': 'translateY('+(step)+'px)'
-			});
-			blockPic1.css({
-				'transform': 'translateY('+(-blockPic2.height())+'px)'
-			});
-			blockPic1Img.css({
-				'transform': 'translateY('+(blockPic2.height())+'px)'
-			});
-
-		} else if (windowScrollTop >= (kosfigScrollTop)) {
-			if (!abc) {
-				$window.scrollTop(kosfigScrollTop);
-				abc = true;
-			}
-			parentBlock.removeClass('before after').addClass('active');
-
-			step = windowScrollTop - kosfigScrollTop;
-
-			blockPic1.css({
-				'transform': 'translateY('+(-step)+'px)'
-			});
-
-			blockPic1Img.css({
-				'transform': 'translateY('+(step)+'px)'
-			});
-			blockPic2.css({
-				'transform': 'translateY('+(0)+'px)'
-			});
-			blockPic2Img.css({
-				'transform': 'translateY('+(0)+'px)'
-			});
-
-		} else {
-			abc = false;
-			parentBlock.removeClass('active').addClass('before');
-			step = 0;
-			blockPic1.css({
-				'transform': 'translateY('+(0)+'px)'
-			});
-			blockPic2.css({
-				'transform': 'translateY('+(0)+'px)'
-			});
-			blockPic1Img.css({
-				'transform': 'translateY('+(0)+'px)'
-			});
-			blockPic2Img.css({
-				'transform': 'translateY('+(0)+'px)'
-			});
-		}
-		tempScrollTop = currentScrollTop;
-	}).trigger('scroll');
-
+			tempScrollTop = currentScrollTop;
+		}).trigger('scroll');
+	}
 	// --------------------------------------- /CUSTOM SCROLL --------------------------------------- //
 
 
@@ -118,7 +125,18 @@ $(function(){
 	$('.pic2 .items-wrapper').slick({ 
 		slidesToShow: 4,
 		slidesToScroll: 1,
-		rows: 0
+		rows: 0,
+		dots: false,
+		responsive: [
+			{
+				breakpoint: 1025,
+				settings: {
+			        slidesToShow: 3,
+			        slidesToScroll: 1,
+			        infinite: true
+		      	}
+		    },
+		]
 	});
 	
 });

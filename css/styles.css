@@ -4,11 +4,9 @@ body {
     padding: 0;
     margin: 0;
 }
-
 * {
 	outline: none;
 }
-
 .content {
 	display: flex;
 	align-items: center;
@@ -18,18 +16,15 @@ body {
 	min-height: 100vh;
 	color: #fff;
 }
-
 .content > div {
 	position: relative;
 	z-index: 5;
 }
-
 .pic1 .content {
 	background: url('../images/main-bg.jpg') no-repeat;
 	background-size: cover;
 	position: relative;
 }
-
 .pic1 .content:before {
 	position: absolute;
 	content: '';
@@ -39,14 +34,12 @@ body {
 	left: 0;
 	background: rgba(255,255,255, 0.75);
 }
-
 .pic1 .content .scroll-down {
 	position: absolute;
 	bottom: 50px;
 	left: 50%;
 	margin-left: -25px;
 }
-
 .pic2 .content {
 	background: url('../images/bg2.jpg') no-repeat;
 	background-size: cover;
@@ -61,11 +54,23 @@ body {
 	left: 0;
 	background: rgba(0,0,0, 0.7);
 }
-
+.pic3 .content {
+	background: url('../images/bg3.jpg') no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.pic3 .content:before {
+	position: absolute;
+	content: '';
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0, 0.7);
+}
 .pic2 .items-wrapper {
 	max-width: 90%; 
 }
-
 .pic2 .items-wrapper .slick-arrow {
 	width: 60px;
 	height: 60px;
@@ -80,21 +85,17 @@ body {
 	opacity: 0.3;
 	transition: all 0.4s;
 }
-
 .pic2 .items-wrapper .slick-arrow:hover {
 	opacity: 1;
 	transition: all 0.4s;
 }
-
 .pic2 .items-wrapper .slick-prev {
 	transform: rotate(180deg);
 	left: -60px;
 }
-
 .pic2 .items-wrapper .slick-next {
 	right: -60px;
 }
-
 .pic2 .items-wrapper .item {
 	margin: 0 19px; 
 }
@@ -104,11 +105,9 @@ body {
 	text-decoration: none;
 	transition: all 0.2s ease 0s;
 }
-
 .pic2 .items-wrapper .item a:hover {
 	color: #fff;
 }
-
 .pic2 .items-wrapper .item a .img {
 	transition: all 0.2s ease 0s;
 	margin-bottom: 30px;
@@ -119,7 +118,6 @@ body {
     transform: translateY(-10px);
     transition: all 0.2s ease 0s;
 }
-
 .pic2 .items-wrapper .item a:hover .img:before {
 	position: absolute;
 	content: '';
@@ -130,11 +128,9 @@ body {
 	background: rgba(0,0,0,0.4);
 	transition: all 0.2s ease 0s;
 }
-
 .pic2 .items-wrapper .item img {
-	width: 390px;
+	width: 100%;
 }
-
 .content .pic {
 	margin-bottom: 25px;
 	position: relative;
@@ -157,25 +153,24 @@ body {
 	margin-bottom: 10px;
 	color: #000;
 }
-
 .body-wrap .descr {
 	font-size: 19px;
 	font-weight: 500;
 	color: #7b7b7b;
 	margin-bottom: 30px;
 }
-
 .social-links a {
 	display: inline-block;
 	width: 35px;
 	height: 35px;
 }
-
 .social-links a svg {
 	width: 17px;
 	height: 17px;
 }
-
+.bg1 {
+	background: #fff;
+}
 .customScroll {
 	height: 300vh;
 	position: relative;
@@ -205,9 +200,6 @@ body {
 	overflow: hidden;
 	position: relative;
 }
-.bg3 {
-	background-color: #043;
-}
 .bg[data-background="bg"] {
 	position: absolute;
 	top: 0;
@@ -235,7 +227,19 @@ body {
 	z-index: 1;
 	overflow: hidden;
 }
-
 .slick-slider .slick-track {
 	padding: 25px 0;
+}
+
+@media all and (max-width: 1023px) {
+
+	.customScroll {
+		height: auto;
+		position: relative;
+		overflow: hidden;
+	}
+	.customScroll.before > div, .customScroll.active > div, .customScroll.after > div {
+		position: static;
+	}
+
 }
