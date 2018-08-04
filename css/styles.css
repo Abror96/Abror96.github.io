@@ -5,6 +5,10 @@ body {
     margin: 0;
 }
 
+* {
+	outline: none;
+}
+
 .content {
 	display: flex;
 	align-items: center;
@@ -12,14 +16,20 @@ body {
 	flex-direction: column;
 	text-align: center;
 	min-height: 100vh;
+	color: #fff;
 }
 
+.content > div {
+	position: relative;
+	z-index: 5;
+}
 
 .pic1 .content {
 	background: url('../images/main-bg.jpg') no-repeat;
 	background-size: cover;
 	position: relative;
 }
+
 .pic1 .content:before {
 	position: absolute;
 	content: '';
@@ -30,12 +40,107 @@ body {
 	background: rgba(255,255,255, 0.75);
 }
 
-.pic {
+.pic1 .content .scroll-down {
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	margin-left: -25px;
+}
+
+.pic2 .content {
+	background: url('../images/bg2.jpg') no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.pic2 .content:before {
+	position: absolute;
+	content: '';
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0, 0.7);
+}
+
+.pic2 .items-wrapper {
+	max-width: 90%; 
+}
+
+.pic2 .items-wrapper .slick-arrow {
+	width: 60px;
+	height: 60px;
+	background: url('../images/next.svg') no-repeat;
+	background-size: cover;
+	font-size: 0;
+	cursor: pointer;
+	border: none;
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	opacity: 0.3;
+	transition: all 0.4s;
+}
+
+.pic2 .items-wrapper .slick-arrow:hover {
+	opacity: 1;
+	transition: all 0.4s;
+}
+
+.pic2 .items-wrapper .slick-prev {
+	transform: rotate(180deg);
+	left: -60px;
+}
+
+.pic2 .items-wrapper .slick-next {
+	right: -60px;
+}
+
+.pic2 .items-wrapper .item {
+	margin: 0 19px; 
+}
+.pic2 .items-wrapper .item a {
+	display: inline-block;
+	color: #6f6f6f;
+	text-decoration: none;
+	transition: all 0.2s ease 0s;
+}
+
+.pic2 .items-wrapper .item a:hover {
+	color: #fff;
+}
+
+.pic2 .items-wrapper .item a .img {
+	transition: all 0.2s ease 0s;
+	margin-bottom: 30px;
+	position: relative;
+}
+.pic2 .items-wrapper .item a:hover .img {
+	box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    transition: all 0.2s ease 0s;
+}
+
+.pic2 .items-wrapper .item a:hover .img:before {
+	position: absolute;
+	content: '';
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.4);
+	transition: all 0.2s ease 0s;
+}
+
+.pic2 .items-wrapper .item img {
+	width: 390px;
+}
+
+.content .pic {
 	margin-bottom: 25px;
 	position: relative;
 	z-index: 5;
 }
-.pic img {
+.content .pic img {
 	width: 125px;
 	height: 125px;
 	border-radius: 50%;
@@ -50,6 +155,7 @@ body {
 	font-size: 40px;
 	font-weight: bold;
 	margin-bottom: 10px;
+	color: #000;
 }
 
 .body-wrap .descr {
@@ -99,12 +205,6 @@ body {
 	overflow: hidden;
 	position: relative;
 }
-.bg1 {
-	background-color: #069;
-}
-.bg2 {
-	background: #054;
-}
 .bg3 {
 	background-color: #043;
 }
@@ -134,4 +234,8 @@ body {
 	background-size: cover; 
 	z-index: 1;
 	overflow: hidden;
+}
+
+.slick-slider .slick-track {
+	padding: 25px 0;
 }
