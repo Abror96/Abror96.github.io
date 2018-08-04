@@ -12,11 +12,15 @@ body {
 	flex-direction: column;
 	text-align: center;
 	min-height: 100vh;
+}
+
+
+.pic1 .content {
 	background: url('../images/main-bg.jpg') no-repeat;
 	background-size: cover;
 	position: relative;
 }
-.content:before {
+.pic1 .content:before {
 	position: absolute;
 	content: '';
 	top: 0;
@@ -93,6 +97,7 @@ body {
 	background-size: cover;	
 	z-index: 3;
 	overflow: hidden;
+	position: relative;
 }
 .bg1 {
 	background-color: #069;
