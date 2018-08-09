@@ -304,19 +304,12 @@ body {
 } 
 
 @media all and (max-width: 1023px) {
-
-	.customScroll {
-		height: auto;
-		position: relative;
-		overflow: hidden;
-	}
-	.customScroll.before > div, .customScroll.active > div, .customScroll.after > div {
-		position: static;
-	}
 	.pic2 .items-wrapper {
 		max-width: 85%; 
 	}
-
+	.pic1 .content .scroll-down {
+		display: none;
+	}
 }
 
 @media all and (max-width: 900px) {
@@ -331,6 +324,14 @@ body {
 	}
 	.pic3 .slick-prev {
 		left: -30px;
+	}
+}
+
+@media all and (max-width: 500px) {
+	.tabs-nav a {
+		font-size: 13px;
+		line-height: 1.5;
+		padding: 7px 10px;
 	}
 }
 
