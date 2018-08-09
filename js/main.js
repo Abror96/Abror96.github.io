@@ -137,16 +137,14 @@ $(function(){
 				breakpoint: 1025,
 				settings: {
 			        slidesToShow: 3,
-			        slidesToScroll: 1,
-			        infinite: true
+			        slidesToScroll: 1
 		      	}
 		    },
 		    {
 				breakpoint: 851,
 				settings: {
 			        slidesToShow: 2,
-			        slidesToScroll: 1,
-			        infinite: true
+			        slidesToScroll: 1
 		      	}
 		    },
 		    {
@@ -154,8 +152,7 @@ $(function(){
 				settings: {
 			        slidesToShow: 1,
 			        slidesToScroll: 1,
-			        centerMode: true,
-			        infinite: true,
+			        centerMode: true, 
 			        arrows: false
 		      	}
 		    },
@@ -164,8 +161,56 @@ $(function(){
 				settings: {
 			        slidesToShow: 1,
 			        slidesToScroll: 1,
+			        centerMode: false, 
+			        arrows: false,
+			        dots: true
+		      	}
+		    }
+		]
+	});
+
+	$('.app-screens').slick({
+		slidesToShow: 5,
+		slidesToScroll: 1,
+		rows: 0,
+		dots: false,
+		autoplay: false,
+		responsive: [
+			{
+				breakpoint: 1600,
+				settings: {
+			        slidesToShow: 4,
+			        slidesToScroll: 1
+		      	}
+		    },
+		    {
+				breakpoint: 1200,
+				settings: {
+			        slidesToShow: 3,
+			        slidesToScroll: 1 
+		      	}
+		    },
+		    {
+				breakpoint: 961,
+				settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 1 
+		      	}
+		    },
+		    {
+				breakpoint: 600,
+				settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1,
+			        centerMode: true
+		      	}
+		    },
+		    {
+				breakpoint: 490,
+				settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1,
 			        centerMode: false,
-			        infinite: true,
 			        arrows: false,
 			        dots: true
 		      	}
@@ -186,6 +231,7 @@ $(function(){
 	    $this.parent().addClass('tab-active');
 	    $('.tabs-stage > div').hide();
 	    $($this.attr('href')).fadeIn();
+
 	});
 
 	$('.tabs-nav a:first').trigger('click'); // Default

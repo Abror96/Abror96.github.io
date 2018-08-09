@@ -36,7 +36,7 @@ body {
 	font-family: 'Knewave', 'Roboto', Arial, sans-serif;
 	margin-bottom: 50px;
 }
-.pic2 .items-wrapper .slick-arrow {
+.pic2 .items-wrapper .slick-arrow, .pic3 .slick-arrow {
 	width: 60px;
 	height: 60px;
 	background: url('../images/next.svg') no-repeat;
@@ -50,15 +50,15 @@ body {
 	opacity: 0.3;
 	transition: all 0.4s;
 }
-.pic2 .items-wrapper .slick-arrow:hover {
+.pic2 .items-wrapper .slick-arrow:hover, .pic3 .slick-arrow:hover {
 	opacity: 1;
 	transition: all 0.4s;
 }
-.pic2 .items-wrapper .slick-prev {
+.pic2 .items-wrapper .slick-prev, .pic3 .slick-prev {
 	transform: rotate(180deg);
 	left: -60px;
 }
-.pic2 .items-wrapper .slick-next {
+.pic2 .items-wrapper .slick-next, .pic3 .slick-next {
 	right: -60px;
 }
 .pic2 .items-wrapper .item {
@@ -112,14 +112,20 @@ body {
 	box-sizing: border-box;
 	display: flex;
 }
+.pic3 .app-screens.slick-initialized {
+	display: block;
+}
 .pic3 .app-screens .screen {
 	margin: 0 5px;
+}
+.pic3 .app-screens .screen-in {
 	border: 2px solid #000719;
 	border-radius: 29px;
 	overflow: hidden;
 	font-size: 0;
 	max-width: 251px;
 	max-height: 515px;
+	margin: 0 auto;
 	box-sizing: border-box;
 }
 .pic3 .app-screens img { 
@@ -311,6 +317,27 @@ body {
 		max-width: 85%; 
 	}
 
+}
+
+@media all and (max-width: 900px) {
+	.pic3 .content {
+		padding: 70px 40px 40px;
+	}
+	.tabs-stage {
+		padding: 0;
+	}
+	.pic3 .slick-next {
+		right: -30px;
+	}
+	.pic3 .slick-prev {
+		left: -30px;
+	}
+}
+
+@media all and (max-width: 375px) {
+	.pic3 .content {
+		padding: 40px 20px 30px;
+	}
 }
 
 
