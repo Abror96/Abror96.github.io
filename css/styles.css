@@ -261,6 +261,11 @@ body {
 .slick-dots li.slick-active button {
 	background: #fff;
 }
+
+.pic2 {
+    display: none;
+}
+
 /* TABS */
 .tabs-nav {
     list-style: none;
