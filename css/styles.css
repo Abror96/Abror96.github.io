@@ -139,8 +139,8 @@ body {
 	z-index: 5;
 }
 .content .pic img {
-	width: 125px;
-	height: 125px;
+	width: 175px;
+	height: 175px;
 	border-radius: 50%;
 	box-shadow: 0 0px 4px 0 rgba(255,255,255,0.18), 0 0px 12px 0 rgba(255,255,255,0.15);
     opacity: .9;
